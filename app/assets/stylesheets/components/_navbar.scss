@@ -1,10 +1,13 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgb(13, 6, 6);
+  color: white;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  background-color: white;
+  border-radius: 40px;
 }
 
 .navbar-lewagon .navbar-brand img {
