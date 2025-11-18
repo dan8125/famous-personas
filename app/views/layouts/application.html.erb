@@ -12,13 +12,13 @@
 
   <body>
     <%= link_to "Skip to main content", "#main-content", class: "visually-hidden-focusable" %>
-  <header>
-    <%= render "shared/navbar" %> <!-- 👈 Add this for navbar -->
-  </header>
+    <header>
+      <%= render "shared/navbar" %> <!-- 👈 Add this for navbar -->
+    </header>
 
-  <main id="main-content">
-    <%= yield %>
-    <%= render "shared/flashes" %>
-  </main>
+    <main id="main-content">
+      <%= yield %>
+      <%= render "shared/flashes" %>
+    </main>
   </body>
 </html>
