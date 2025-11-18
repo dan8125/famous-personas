@@ -74,3 +74,6 @@ group :test do
 end
 
 gem "devise"
+
+# ADDED GEMS
+gem "ruby_llm", "~> 1.6.4"
