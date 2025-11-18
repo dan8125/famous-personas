@@ -1,6 +1,14 @@
-<div class="container border">
-  <h2 class="text-center">Insert greetings from persona</h2>
-  <%= image_tag "https://assets.vogue.com/photos/5f6d05918c75f02cb3917f28/16:9/w_1920%2Cc_limit/fp111_107a_her_majesty_queen_elizabeth_xl_02618_2008131904_id_1316166.jpg",
-  size: "320x320",
-  class: "rounded-circle object-fit-cover d-block mx-auto" %>
+<div>
+  <div class="sidebar container border text-center bg-black text-white justify-content-center">
+    <h2 class="fw-bold" >Insert opening greetings from persona</h2>
+    <%= image_tag "https://assets.vogue.com/photos/5f6d05918c75f02cb3917f28/16:9/w_1920%2Cc_limit/fp111_107a_her_majesty_queen_elizabeth_xl_02618_2008131904_id_1316166.jpg",
+    size: "320x320",
+    class: "rounded-circle object-fit-cover d-block mx-auto" %>
+    <p>Paragraph 1: Insert friendly welcome from the persona.</p>
+    <p>Paragraph 2: Insert friendly welcome from the persona.</p>
+  </div>
+  <div class="main-chat-container border bg-primary-subtle">
+    <%= link_to "See Previous Conversations", chats_path(persona_id: @persona.id), class: "text-center" %>
+    <h2 class="fw-bold text-center"><%= "Chat with #{@persona.name}" %></h2>
+  </div>
 </div>
