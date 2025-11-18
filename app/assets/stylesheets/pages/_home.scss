@@ -1,1 +1,35 @@
-// Specific CSS for your home-page
+
+
+/* Make the body take full height and use flexbox */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content grows to fill space */
+.content {
+  flex: 1;
+}
+
+/* Footer styling */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.footer a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.footer i {
+  margin-right: 5px;
+}
