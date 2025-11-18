@@ -76,6 +76,8 @@ end
 
 gem "devise"
 
+# ADDED GEMS
+gem "ruby_llm", "~> 1.6.4"
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 gem 'ostruct'
