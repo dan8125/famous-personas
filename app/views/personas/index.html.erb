@@ -1,0 +1,25 @@
+<div>
+  <div class="container">
+    <h2>Choose who you want to chat with!</h2>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <% @personas.each do |persona| %>
+      <div class="col-md-4 mb-3">
+          <div class="card">
+            <% if persona.photo.attached? %>
+              <%= cl_image_tag persona.photo.key, alt: persona.name %>
+            <% else %>
+              <%= image_tag 'https://media.istockphoto.com/id/2171382633/vector/user-profile-icon-anonymous-person-symbol-blank-avatar-graphic-vector-illustration.jpg?s=612x612&w=0&k=20&c=ZwOF6NfOR0zhYC44xOX06ryIPAUhDvAajrPsaZ6v1-w=', alt: persona.name %>
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title"><%= persona.name %></h5>
+              <%= link_to 'Choose', persona_path(persona), class: 'btn btn-primary mt-3' %>
+            </div>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>
