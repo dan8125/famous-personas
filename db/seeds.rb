@@ -28,11 +28,19 @@ elizabeth.save
 
 puts "Created Queen Elizabeth"
 
-spongebob_file = URI.parse("https://upload.wikimedia.org/wikipedia/commons/7/7a/SpongeBob_SquarePants_character.png").open
+spongebob_file = URI.parse("https://ih1.redbubble.net/image.5393571504.5746/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg").open
 spongebob = Persona.new(name: "Spongebob", category: "cartoon")
-spongebob.photo.attach(io: spongebob_file, filename: "spongebob.png", content_type: "image/png")
+spongebob.photo.attach(io: spongebob_file, filename: "spongebob.jpg", content_type: "image/jpg")
 spongebob.save
 
 puts "Created Spongebob"
+
+
+jung_file = URI.parse("https://jung.org/uploads/jungsociety/customization/1_1CWZJDjUs0mR9nHG3ER9-Q1.jpg").open
+jung = Persona.new(name: "Jung", category: "philospher")
+jung.photo.attach(io: jung_file, filename: "jung.jpg", content_type: "image/jpg")
+jung.save
+
+puts "Created Carl Jung"
 
 puts "Finished! Created #{Persona.count} personas."
