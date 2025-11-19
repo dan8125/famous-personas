@@ -1,0 +1,20 @@
+<div class="page-layout">
+  <div class="col-4 sidebar container text-center bg-black text-white justify-content-center">
+    <h2 class="fw-bold fs-1 mt-5" ><%= "Greetings from #{@chat.persona.name}!" %></h2>
+    <%= image_tag "https://assets.vogue.com/photos/5f6d05918c75f02cb3917f28/16:9/w_1920%2Cc_limit/fp111_107a_her_majesty_queen_elizabeth_xl_02618_2008131904_id_1316166.jpg",
+    size: "272x272",
+    class: "rounded-circle object-fit-cover d-block mx-auto mt-4" %>
+    <p class="mt-4 px-4">It is a pleasure to make your acquaintance, even across this modern invention you call the internet.</p>
+    <p class="mt-1 px-4">I trust you are keeping well, and I extend my warmest good wishes for the day ahead.”</p>
+  </div>
+  <div class="main-chat-container border bg-light-subtle">
+    <%= link_to 'Back', persona_path(@chat.persona), class: "btn btn-dark btn-lg" %>
+    <h2 class="fw-bold fs-1 text-center pt-3 px-4"><%= "Chat with #{@chat.persona.name}" %></h2>
+    <div class="p-3" id="messages">
+      <%= render 'messages/messages', messages: @chat.messages %>
+    </div>
+    <div id="chat_field_container">
+      <%= render 'messages/form', chat: @chat, message: @message %>
+    </div>
+  </div>
+</div>
