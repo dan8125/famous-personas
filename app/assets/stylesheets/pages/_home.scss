@@ -1,64 +1,35 @@
- .footer {
-  background: #dfd9d9;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
-  color: rgba(37, 15, 15, 0.3);
-}
-.footer-links {
-  display: flex;
-  align-items: center;
-}
-.footer-links a {
-  color: black;
-  opacity: 0.15;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
-}
-.footer-links a:hover {
-  opacity: 1;
-}
-.footer .fa-heart {
-  color: #D23333;
+
+
+/* Make the body take full height and use flexbox */
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-.move-block-right {
-  width: 550px;
-  margin-left: auto;
-}
-
-.content-wrapper {
+body {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  gap: 20px;
 }
 
-.content h1 {
+/* Content grows to fill space */
+.content {
+  flex: 1;
+}
+
+/* Footer styling */
+.footer {
+  background-color: #333;
+  color: white;
   text-align: center;
-}
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
+  padding: 20px;
 }
 
-.content h1 {
-  text-align: left;
-  padding: 40px;
+.footer a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
 }
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  gap: 100px;
+
+.footer i {
+  margin-right: 5px;
 }
