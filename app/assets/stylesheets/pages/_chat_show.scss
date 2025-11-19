@@ -1,0 +1,69 @@
+.page-layout {
+  display: flex;
+  height: 100vh;       /* full screen */
+}
+
+.sidebar {  /* or any width */
+  position: sticky;    /* stays stuck while scrolling */
+  top: 0;
+  left: 0;
+  height: 100vh;       /* full window height */
+  background-color: #f8f9fa; /* light gray */
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  overflow-y: auto;    /* scroll independently if long */
+}
+
+.main-chat-container {
+  flex: 1;             /* TAKE ALL REMAINING SPACE */
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.chat-input {
+  width: 100%;
+  border-radius: 30px;       /* pill shape */
+  padding-right: 50px;       /* space for the send button */
+}
+
+.send-btn {
+  right: 12px;
+  top: 32px;
+  transform: translateY(-50%);
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50% !important;       /* perfect circle */
+
+  background: #000000;       /* Bootstrap primary */
+  color: rgb(255, 255, 255);
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#message_content {
+  height: 64px;
+}
+
+textarea {
+  resize: none;
+  padding-top: 8px;
+  padding-bottom: 4px;
+}
+
+.send-btn:hover {
+  background: #312f2f;
+  color: white;
+  border: none;
+}
+
+.assistant-chat-bubble {
+  background-color: #eceef2;
+  display: inline-block;
+  max-width: 70%;
+  border-radius: 9999px;
+  overflow-wrap: break-word;
+}
