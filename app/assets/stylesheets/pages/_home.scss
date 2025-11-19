@@ -33,3 +33,17 @@ body {
 .footer i {
   margin-right: 5px;
 }
+
+.circle-container {
+  display: flex;
+  justify-content: left;  /* centers them */
+  gap: 20px;                /* space between images */
+  margin-top: 20px;
+}
+
+.circle-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+}
