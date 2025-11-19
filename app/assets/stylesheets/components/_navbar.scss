@@ -1,12 +1,26 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgb(13, 6, 6);
+  color: white;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  background-color: white;
+  border-radius: 40px;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 200px;
+}
+
+.logo-img {
+  /* Set the height and let the browser calculate the width */
+  height: 500px;
+  width: auto;
+  /* You can adjust '40px' to whatever height looks best in your navbar. */
+}
+
+.bold-text {
+  font-weight: bold;
 }
