@@ -28,9 +28,9 @@ elizabeth.save
 
 puts "Created Queen Elizabeth"
 
-spongebob_file = URI.parse("https://ih1.redbubble.net/image.5393571504.5746/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg").open
+spongebob_file = URI.parse("https://upload.wikimedia.org/wikipedia/commons/7/7a/SpongeBob_SquarePants_character.png").open
 spongebob = Persona.new(name: "Spongebob", category: "cartoon")
-spongebob.photo.attach(io: spongebob_file, filename: "spongebob.jpg", content_type: "image/jpg")
+spongebob.photo.attach(io: spongebob_file, filename: "spongebob.png", content_type: "image/png")
 spongebob.save
 
 puts "Created Spongebob"
