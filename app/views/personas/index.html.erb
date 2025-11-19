@@ -8,9 +8,9 @@
   <div class="row">
     <% @personas.each do |persona| %>
       <div class="col-md-4 mb-3">
-          <div class="card">
+          <div class="card" style="height: 350px;">
             <% if persona.photo.attached? %>
-              <%= cl_image_tag persona.photo.key, alt: persona.name %>
+              <%= cl_image_tag persona.photo.key, alt: persona.name, style: "max-height: 200px; width: 100%; object-fit: contain;" %>
             <% else %>
               <%= image_tag 'https://media.istockphoto.com/id/2171382633/vector/user-profile-icon-anonymous-person-symbol-blank-avatar-graphic-vector-illustration.jpg?s=612x612&w=0&k=20&c=ZwOF6NfOR0zhYC44xOX06ryIPAUhDvAajrPsaZ6v1-w=', alt: persona.name %>
             <% end %>
