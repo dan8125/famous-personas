@@ -1,10 +1,10 @@
 <div>
   <div class="sidebar container border text-center bg-black text-white justify-content-center">
-    <h2 class="fw-bold" >Insert opening greetings from persona</h2>
-    <%= image_tag "https://assets.vogue.com/photos/5f6d05918c75f02cb3917f28/16:9/w_1920%2Cc_limit/fp111_107a_her_majesty_queen_elizabeth_xl_02618_2008131904_id_1316166.jpg",
+    <h2 class="fw-bold"><%= "Greetings from #{@persona.name}" %></h2>
+    <%= image_tag url_for(@persona.photo),
     size: "320x320",
-    class: "rounded-circle object-fit-cover d-block mx-auto" %>
-    <p>Paragraph 1: Insert friendly welcome from the persona.</p>
+    class: "rounded-circle object-fit-cover d-block mx-auto" if @persona.photo.attached? %>
+    <p><%= @persona.bio %> </p>
     <p>Paragraph 2: Insert friendly welcome from the persona.</p>
   </div>
   <div class="main-chat-container border bg-primary-subtle">
