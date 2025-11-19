@@ -89,3 +89,49 @@ body {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+.circle-container {
+  display: flex;             /* Align images in a row */
+  justify-content: left;   /* Center them horizontally */
+  gap: 30px;                 /* Space between images */
+  margin-bottom: 80px;       /* Space from footer */
+}
+
+.circle-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;        /* Make them circles */
+  object-fit: cover;
+}
+
+.image-quote {
+  text-align: center; /* centers everything inside */
+}
+
+.quote-text p {
+  margin: 0;         /* remove extra spacing */
+  line-height: 1.2;  /* optional: tighter spacing */
+}
+
+.circle-container {
+  display: flex;
+  justify-content: center; /* centers the whole row */
+  gap: 40px;               /* space between the images */
+  margin-top: 30px;
+}
+
+.image-quote {
+  text-align: center;      /* centers text under each image */
+}
+
+.circle-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.quote p {
+  margin: 8px 0 0 0;       /* small spacing */
+  line-height: 1.2;
+}
