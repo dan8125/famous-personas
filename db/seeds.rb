@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+require "open-uri"
 
 puts "Cleaning database..."
 
@@ -20,9 +21,18 @@ puts "Created users."
 
 Persona.destroy_all
 puts "Creating personas..."
-Persona.create!(name: "Queen Elizabeth", category: "historical person")
+elizabeth_file = URI.parse("https://assets.vogue.com/photos/5f6d05918c75f02cb3917f28/16:9/w_1920%2Cc_limit/fp111_107a_her_majesty_queen_elizabeth_xl_02618_2008131904_id_1316166.jpg").open
+elizabeth = Persona.new(name: "Queen Elizabeth", category: "historical person")
+elizabeth.photo.attach(io: elizabeth_file, filename: "elizabeth.jpg", content_type: "image/jpg")
+elizabeth.save
+
 puts "Created Queen Elizabeth"
-Persona.create!(name: "Spongebob", category: "cartoon")
+
+spongebob_file = URI.parse("https://upload.wikimedia.org/wikipedia/commons/7/7a/SpongeBob_SquarePants_character.png").open
+spongebob = Persona.new(name: "Spongebob", category: "cartoon")
+spongebob.photo.attach(io: spongebob_file, filename: "spongebob.png", content_type: "image/png")
+spongebob.save
+
 puts "Created Spongebob"
 
 puts "Finished! Created #{Persona.count} personas."
