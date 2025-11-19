@@ -1,7 +1,11 @@
 class PersonasController < ApplicationController
 
   def index
-    @personas = Persona.all
+    @personas = [
+      Persona.find_by(name: "Queen Elizabeth"),
+      Persona.find_by(name: "Spongebob"),
+      Persona.find_by(name: "Carl Jung")
+    ]
   end
 
   def show
