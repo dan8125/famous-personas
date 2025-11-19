@@ -12,14 +12,16 @@ require "open-uri"
 
 puts "Cleaning database..."
 
+Chat.destroy_all
 User.destroy_all
+Persona.destroy_all
+
 puts "Creating users..."
 haruna = User.create!(email: "haruna@gmail.com", password: "123456")
 steve = User.create!(email: "steve@gmail.com", password: "123456")
 dan = User.create!(email: "dan@gmail.com", password: "123456")
 puts "Created users."
 
-Persona.destroy_all
 puts "Creating personas..."
 elizabeth_file = URI.parse("https://assets.vogue.com/photos/5f6d05918c75f02cb3917f28/16:9/w_1920%2Cc_limit/fp111_107a_her_majesty_queen_elizabeth_xl_02618_2008131904_id_1316166.jpg").open
 elizabeth = Persona.new(name: "Queen Elizabeth", category: "historical person", bio: "Queen Elizabeth II (1926–2022) was the longest-reigning British monarch, known for her dedication, resilience, and service. She guided the UK and Commonwealth through decades of change, becoming a symbol of stability and continuity.")
