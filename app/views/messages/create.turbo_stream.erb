@@ -4,3 +4,4 @@
 <%= turbo_stream.update "chat_field_container" do %>
   <%= render 'messages/form', chat: @chat, message: Message.new %>
 <% end %>
+<%= turbo_stream.replace "chat_title", partial: "messages/title", locals: { chat: @chat } %>
