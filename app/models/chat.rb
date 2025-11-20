@@ -19,4 +19,8 @@ class Chat < ApplicationRecord
     response = RubyLLM.chat.with_instructions(TITLE_PROMPT).ask(first_user_message.content)
     update!(title: response.content)
   end
+
+  def user_message_limit_reached?
+    messages.where(role: "user").count >= Message::MAX_USER_MESSAGES
+  end
 end

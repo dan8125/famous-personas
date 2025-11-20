@@ -23,7 +23,14 @@
       <%= render 'messages/messages', messages: @chat.messages %>
     </div>
     <div id="chat_field_container">
-      <%= render 'messages/form', chat: @chat, message: @message %>
+      <% if @chat.user_message_limit_reached? %>
+        <div class="text-center mt-3">
+          <p class="text-danger">You’ve reached the maximum number of messages for this chat.</p>
+          <%= link_to "Start a new chat!", persona_chats_path(@chat.persona), data: { turbo_method: :post }, class: "btn btn-dark btn-lg mt-3" %>
+        </div>
+      <% else %>
+        <%= render 'messages/form', chat: @chat, message: @message %>
+      <% end %>
     </div>
   </div>
 </div>
