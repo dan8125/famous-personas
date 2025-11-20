@@ -24,3 +24,13 @@
 .bold-text {
   font-weight: bold;
 }
+body {
+  padding-top: 70px; /* adjust to your navbar height */
+}
+.navbar-lewagon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+}
