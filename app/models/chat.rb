@@ -7,7 +7,7 @@ class Chat < ApplicationRecord
 
   DEFAULT_TITLE = "Untitled"
   TITLE_PROMPT = <<~PROMPT
-    Generate a short, descriptive, 3-to-6-word title that summarizes the user question for a chat conversation.
+    Generate a short, human-like title (max 6 words) that summarizes the topic of the chat conversation between the user and persona.
   PROMPT
 
   def initial_title
@@ -17,6 +17,6 @@ class Chat < ApplicationRecord
     return if first_user_message.nil?
 
     response = RubyLLM.chat.with_instructions(TITLE_PROMPT).ask(first_user_message.content)
-    update(title: response.content)
+    update!(title: response.content)
   end
 end

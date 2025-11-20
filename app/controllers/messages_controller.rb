@@ -14,6 +14,7 @@ class MessagesController < ApplicationController
       response = @ruby_llm_chat.with_instructions(instructions).ask(@message.content)
       # raise
       Message.create(role: "assistant", content: response.content, chat: @chat)
+      @chat.reload
       @chat.initial_title
 
       respond_to do |format|
