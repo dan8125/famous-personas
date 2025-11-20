@@ -8,6 +8,22 @@
   </div>
   <div class="main-container border bg-light-subtle">
     <h2 class="fw-bold text-center"><%= "Your Chats with #{@persona.name}" %></h2>
+
+    <% if @persona.chats.any? %>
+        <ul>
+          <% @persona.chats.each do |chat| %>
+            <li class="chat-title-item d-flex align-items-center justify-content-between">
+              <span class="chat-title-text"><%= chat.title %></span>
+              <%= link_to chat_path(chat), class: "send-btn btn" do %>
+                ➤
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        There are no chats yet.
+      <% end %>
+
     <%= link_to "Start New Chat", persona_chats_path(@persona), data: { turbo_method: :post }, class: "btn btn-primary start-chat-btn" %>
   </div>
 </div>
