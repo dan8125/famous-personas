@@ -1,9 +1,40 @@
-.sidebar {
-  height: 100vh;
+.page-layout {
   display: flex;
-  flex-direction: column;
+  height: 100vh;       /* full screen */
 }
 
-.main-chat-container {
-  flex-grow: 1;
+.sidebar {  /* or any width */
+  position: sticky;    /* stays stuck while scrolling */
+  top: 0;
+  left: 0;
+  height: 100vh;       /* full window height */
+  background-color: #f8f9fa; /* light gray */
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  overflow-y: auto;    /* scroll independently if long */
+}
+
+.main-container {
+  flex: 1;             /* TAKE ALL REMAINING SPACE */
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.start-chat-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+
+  background: #000000;       /* Bootstrap primary */
+  color: rgb(255, 255, 255);
+  border: none;
+
+  border-radius: 10px
+}
+
+.btn-primary.start-chat-btn:hover {
+  background-color: #312f2f !important;
+  border-color: #312f2f !important;
+  color: white !important;
 }

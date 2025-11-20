@@ -1,16 +1,13 @@
-<div>
-  <div class="sidebar container border text-center bg-black text-white justify-content-center">
+<div class="page-layout">
+  <div class="col-4 sidebar container text-center bg-black text-white justify-content-center">
     <h2 class="fw-bold"><%= @persona.name %></h2>
     <%= image_tag url_for(@persona.photo),
     size: "320x320",
     class: "rounded-circle object-fit-cover d-block mx-auto" if @persona.photo.attached? %>
     <p><%= @persona.bio %> </p>
-    <p>Paragraph 2: Insert quick bio of the persona here.</p>
   </div>
-  <div class="main-chat-container border bg-primary-subtle">
-    <h2 class="fw-bold text-center"><%= "Your Conversations with #{@persona.name}" %></h2>
-  </div>
-  <div>
-    <%= link_to "Start New Chat", persona_chats_path(@persona), data: { turbo_method: :post }, class: "btn btn-primary text-center" %>
+  <div class="main-container border bg-light-subtle">
+    <h2 class="fw-bold text-center"><%= "Your Chats with #{@persona.name}" %></h2>
+    <%= link_to "Start New Chat", persona_chats_path(@persona), data: { turbo_method: :post }, class: "btn btn-primary start-chat-btn" %>
   </div>
 </div>
