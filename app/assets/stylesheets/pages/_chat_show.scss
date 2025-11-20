@@ -60,10 +60,29 @@ textarea {
   border: none;
 }
 
-.assistant-chat-bubble {
-  background-color: #eceef2;
-  display: inline-block;
+.back-button {
+  background-color: black;
+  border-radius: 4px;
+}
+
+.user-chat-bubble {
+  background-color: black;
+  color: white;
   max-width: 70%;
-  border-radius: 9999px;
-  overflow-wrap: break-word;
+  padding: 12px 18px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  border-radius: 28px;
+  margin-bottom: 14px;
+}
+
+.assistant-chat-bubble {
+  max-width: 70%;
+  background-color: #f3f4f6;
+  border-radius: 28px;
+  padding: 12px 18px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  border-radius: 28px;
+  margin-bottom: 14px;
 }
