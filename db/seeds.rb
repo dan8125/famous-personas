@@ -22,6 +22,21 @@ steve = User.create!(email: "steve@gmail.com", password: "123456")
 dan = User.create!(email: "dan@gmail.com", password: "123456")
 puts "Created users."
 
+
+puts "Attaching user photos..."
+
+haruna_file = URI.parse("https://avatars.githubusercontent.com/u/236273565?v=4").open
+haruna.photo.attach(io: haruna_file, filename: "haruna.jpg", content_type: "image/jpg")
+
+steve_file = URI.parse("https://avatars.githubusercontent.com/u/212231809?v=4").open
+steve.photo.attach(io: steve_file, filename: "steve.jpg", content_type: "image/jpg")
+
+dan_file = URI.parse("https://d26jy9fbi4q9wx.cloudfront.net/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdzZLQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--193425d429fc8f3994d4c49f5e909c5126068afb/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lKU2xCRlJ3WTZCa1ZVT2hOeVpYTnBlbVZmZEc5ZlptbHNiRnNJYVFISWFRSElld1k2Q1dOeWIzQTZEbUYwZEdWdWRHbHZiZz09IiwiZXhwIjpudWxsLCJwdXIiOiJ2YXJpYXRpb24ifX0=--c1ef12f4b4a301a4d301848fb027c3aaf2b50191/IMG_6588_2.JPEG").open
+dan.photo.attach(io: dan_file, filename: "dan.jpg", content_type: "image/jpg")
+
+puts "Attached users photo."
+
+
 puts "Creating personas..."
 elizabeth_file = URI.parse("https://assets.vogue.com/photos/5f6d05918c75f02cb3917f28/16:9/w_1920%2Cc_limit/fp111_107a_her_majesty_queen_elizabeth_xl_02618_2008131904_id_1316166.jpg").open
 elizabeth = Persona.new(name: "Queen Elizabeth", category: "historical person", bio: "Queen Elizabeth II (1926–2022) was the longest-reigning British monarch, known for her dedication, resilience, and service. She guided the UK and Commonwealth through decades of change, becoming a symbol of stability and continuity.")
