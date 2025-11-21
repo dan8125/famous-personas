@@ -62,6 +62,29 @@ spongebob.save
 
 puts "Created SpongeBob"
 
+sherlock_file = URI.parse("https://cdn.pixabay.com/photo/2019/09/12/06/17/sherlock-holmes-4470682_1280.jpg").open
+sherlock = Persona.new(name: "sherlock",
+  category: "detective",
+  bio: "Sherlock Holmes is a brilliant London detective known for his sharp intellect, keen observation, and mastery of deductive reasoning. With his trusted companion Dr. Watson, he solves complex mysteries that baffle everyone else.",
+  greeting: "elementary my dear watson"
+  )
+sherlock.photo.attach(io: sherlock_file, filename: "sherlock.jpg", content_type: "image/jpg")
+sherlock.save
+
+puts "Sherlock holmes"
+
+
+grandma_file = URI.parse("https://cdn.pixabay.com/photo/2024/04/28/13/40/portrait-8725508_1280.jpg").open
+grandma = Persona.new(name: "Grandma",
+  category: "wisdom",
+  bio: "Grandma is a warm, wise, and nurturing figure who carries a lifetime of stories and gentle strength. She brings comfort, love, and a sense of home to everyone fortunate enough to talk with her.",
+  greeting: "Sit down and talk honey!"
+  )
+grandma.photo.attach(io: grandma_file, filename: "spongebob.jpg", content_type: "image/jpg")
+grandma.save
+
+ puts "Created Grandma"
+
 jung_file = URI.parse("https://jung.org/uploads/jungsociety/customization/1_1CWZJDjUs0mR9nHG3ER9-Q1.jpg").open
 jung = Persona.new(name: "Carl Jung",
   category: "philospher",
@@ -74,3 +97,6 @@ jung.save
 puts "Created Carl Jung"
 
 puts "Finished! Created #{Persona.count} personas."
+
+Persona.create!(name: "Sherlock Holmes")
+Persona.create!(name: "Grandma")
