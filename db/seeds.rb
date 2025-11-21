@@ -97,6 +97,3 @@ jung.save
 puts "Created Carl Jung"
 
 puts "Finished! Created #{Persona.count} personas."
-
-Persona.create!(name: "Sherlock Holmes")
-Persona.create!(name: "Grandma")
