@@ -35,6 +35,8 @@ body {
   z-index: 1030;
 }
 
-.avatar {
+.avatar:hover {
+  opacity: 0.8;
+  transition: 0.2s;
   cursor: pointer;
 }
