@@ -80,3 +80,4 @@ gem "devise"
 gem "ruby_llm", "~> 1.6.4"
 gem 'cloudinary', '~> 1.16.0'
 gem 'ostruct'
+gem 'wikipedia-client'

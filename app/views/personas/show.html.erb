@@ -7,18 +7,21 @@
         size: "272x272",
         class: "rounded-circle object-fit-cover d-block mx-auto mt-4" %>
     <% else %>
-      <%= image_tag 'https://media.istockphoto.com/id/2171382633/vector/user-profile-icon-anonymous-person-symbol-blank-avatar-graphic-vector-illustration.jpg?s=612x612&w=0&k=20&c=ZwOF6NfOR0zhYC44xOX06ryIPAUhDvAajrPsaZ6v1-w=', alt: persona.name %>
+      <%= image_tag 'https://media.istockphoto.com/id/2171382633/vector/user-profile-icon-anonymous-person-symbol-blank-avatar-graphic-vector-illustration.jpg?s=612x612&w=0&k=20&c=ZwOF6NfOR0zhYC44xOX06ryIPAUhDvAajrPsaZ6v1-w=',
+        alt: @persona.name,
+        size: "272x272",
+        class: "rounded-circle object-fit-cover d-block mx-auto mt-4" %>
     <% end %>
     <p class="mt-4 px-4"><%= @persona.bio %></p>
   </div>
   <div class="main-container bg-light-subtle">
     <%= link_to 'Back', personas_path(@persona), class: "btn btn-dark site-button back-btn" %>
-    <h2 class="fw-bold fs-1 text-center pt-3 px-4"><%= "Your Chats with #{@persona.name}" %></h2>
+    <h2 class="fw-bold fs-1 text-center py-3 px-4"><%= "Your Chats with #{@persona.name}" %></h2>
     <% if @persona.chats.any? %>
       <ul>
         <% @persona.chats.each do |chat| %>
           <li class="chat-title-item d-flex align-items-center justify-content-between">
-            <span class="chat-title-text"><%= chat.title %></span>
+            <span class="chat-title-text"><%= link_to chat.title, chat_path(chat), class: "text-decoration-none text-black" %></span>
             <%= link_to chat_path(chat), class: "send-btn btn" do %>
               ➤
             <% end %>

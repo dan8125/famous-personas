@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  SYSTEM_PROMPT = "I am an interviewer who wants to chat with the famous person mentioned previously.\n\nRespond to my chat inputs in that famous person's tone and way of speaking. Make it sound as natural as possible.\n\nAnswer in a string."
+  SYSTEM_PROMPT = "I am an interviewer who wants to chat with a famous person.\n\nRespond to my chats in that famous person's tone and way of speaking as if you were that person, including your history, background personality, etc. Make your responses as natural and human-like as possible.\n\nAnswer in a string."
 
   def create
     @chat = current_user.chats.find(params[:chat_id])
