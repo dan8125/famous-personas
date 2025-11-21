@@ -7,12 +7,15 @@
       size: "272x272",
       class: "rounded-circle object-fit-cover d-block mx-auto mt-4" %>
     <% else %>
-      <%= image_tag 'https://media.istockphoto.com/id/2171382633/vector/user-profile-icon-anonymous-person-symbol-blank-avatar-graphic-vector-illustration.jpg?s=612x612&w=0&k=20&c=ZwOF6NfOR0zhYC44xOX06ryIPAUhDvAajrPsaZ6v1-w=', alt: persona.name %>
+      <%= image_tag 'https://media.istockphoto.com/id/2171382633/vector/user-profile-icon-anonymous-person-symbol-blank-avatar-graphic-vector-illustration.jpg?s=612x612&w=0&k=20&c=ZwOF6NfOR0zhYC44xOX06ryIPAUhDvAajrPsaZ6v1-w=',
+        alt: @chat.persona.name,
+        size: "272x272",
+        class: "rounded-circle object-fit-cover d-block mx-auto mt-4" %>
     <% end %>
     <p class="mt-4 px-4"><%= @chat.persona.greeting %></p>
   </div>
-  <div class="main-chat-container border bg-light-subtle">
-    <%= link_to 'Back', persona_path(@chat.persona), class: "btn btn-dark btn-lg back-button mt-3" %>
+  <div class="main-container bg-light-subtle">
+    <%= link_to 'Back', persona_path(@chat.persona), class: "btn btn-dark site-button mt-3" %>
     <h2 class="fw-bold fs-1 text-center pt-3 px-4"><%= "Chat with #{@chat.persona.name}" %></h2>
     <turbo-frame id="chat_title">
       <p class="text-center text-body-tertiary">

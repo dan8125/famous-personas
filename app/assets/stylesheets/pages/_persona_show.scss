@@ -17,7 +17,7 @@
 .main-container {
   flex: 1;             /* TAKE ALL REMAINING SPACE */
   padding: 20px;
-  overflow-y: auto;
+  position: relative;
 }
 
 .start-chat-btn {
@@ -37,4 +37,44 @@
   background-color: #312f2f !important;
   border-color: #312f2f !important;
   color: white !important;
+}
+
+.back-btn {
+  position: sticky;
+  top: 20px;
+  z-index: 10;
+
+  background: rgb(0, 0, 0) !important;
+  color: rgb(255, 255, 255);
+  border: none;
+
+  border-radius: 10px
+}
+
+.swal2-confirm {
+  background-color: black;
+  border-radius: 4px;
+}
+
+.swal2-confirm:hover {
+  background-color: rgb(59, 59, 59);
+  border-radius: 4px;
+}
+
+.swal2-cancel {
+  color: black;
+  background-color: rgb(255, 255, 255);
+  border: solid 1px black;
+  border-radius: 4px;
+}
+
+.swal2-cancel:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(197, 197, 197);
+  border: solid 2px black;
+  border-radius: 4px;
+}
+
+.swal2-title {
+  color: black;
 }

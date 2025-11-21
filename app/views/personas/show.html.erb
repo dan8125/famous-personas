@@ -1,29 +1,36 @@
 <div class="page-layout">
   <div class="col-4 sidebar container text-center bg-black text-white justify-content-center">
-    <h2 class="fw-bold"><%= @persona.name %></h2>
-    <%= image_tag url_for(@persona.photo),
-    size: "320x320",
-    class: "rounded-circle object-fit-cover d-block mx-auto" if @persona.photo.attached? %>
-    <p><%= @persona.bio %> </p>
+    <h2 class="fw-bold fs-1 mt-5"><%= @persona.name %></h2>
+    <% if @persona.photo.attached? %>
+      <%= cl_image_tag @persona.photo.key,
+        alt: @persona.name,
+        size: "272x272",
+        class: "rounded-circle object-fit-cover d-block mx-auto mt-4" %>
+    <% else %>
+      <%= image_tag 'https://media.istockphoto.com/id/2171382633/vector/user-profile-icon-anonymous-person-symbol-blank-avatar-graphic-vector-illustration.jpg?s=612x612&w=0&k=20&c=ZwOF6NfOR0zhYC44xOX06ryIPAUhDvAajrPsaZ6v1-w=',
+        alt: @persona.name,
+        size: "272x272",
+        class: "rounded-circle object-fit-cover d-block mx-auto mt-4" %>
+    <% end %>
+    <p class="mt-4 px-4"><%= @persona.bio %></p>
   </div>
-  <div class="main-container border bg-light-subtle">
-    <h2 class="fw-bold text-center"><%= "Your Chats with #{@persona.name}" %></h2>
-
+  <div class="main-container bg-light-subtle">
+    <%= link_to 'Back', personas_path(@persona), class: "btn btn-dark site-button back-btn" %>
+    <h2 class="fw-bold fs-1 text-center py-3 px-4"><%= "Your Chats with #{@persona.name}" %></h2>
     <% if @persona.chats.any? %>
-        <ul>
-          <% @persona.chats.each do |chat| %>
-            <li class="chat-title-item d-flex align-items-center justify-content-between">
-              <span class="chat-title-text"><%= chat.title %></span>
-              <%= link_to chat_path(chat), class: "send-btn btn" do %>
-                ➤
-              <% end %>
-            </li>
-          <% end %>
-        </ul>
-      <% else %>
-        There are no chats yet.
-      <% end %>
-
-    <%= link_to "Start New Chat", persona_chats_path(@persona), data: { turbo_method: :post }, class: "btn btn-primary start-chat-btn" %>
+      <ul>
+        <% @persona.chats.each do |chat| %>
+          <li class="chat-title-item d-flex align-items-center justify-content-between">
+            <span class="chat-title-text"><%= link_to chat.title, chat_path(chat), class: "text-decoration-none text-black" %></span>
+            <%= link_to chat_path(chat), class: "send-btn btn" do %>
+              ➤
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="text-left fs-5 mt-4 ms-3"><%= "You have no previous chats with #{@persona.name} yet." %></p>
+    <% end %>
+    <%= link_to "Start New Chat", persona_chats_path(@persona), data: { turbo_method: :post }, class: "btn btn-primary btn-lg start-chat-btn" %>
   </div>
 </div>
