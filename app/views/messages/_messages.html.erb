@@ -1,13 +1,13 @@
 <% messages.each do |message| %>
   <% if message.role == "user" %>
     <div class="d-flex justify-content-end" data-controller="auto-scroll" >
-      <div class="rounded-pill text-bg-dark px-3 py-3">
+      <div class="user-chat-bubble">
         <%= message.content %>
       </div>
     </div>
   <% elsif message.role == "assistant" %>
     <div class="d-flex justify-content-start">
-      <div class="assistant-chat-bubble px-4 py-3 my-4">
+      <div class="assistant-chat-bubble my-4">
         <%= message.content %>
       </div>
     </div>
