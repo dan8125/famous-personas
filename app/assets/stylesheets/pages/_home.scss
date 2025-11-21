@@ -135,3 +135,23 @@ body {
   margin: 8px 0 0 0;       /* small spacing */
   line-height: 1.2;
 }
+
+.circle-image {
+  border-radius: 50%;
+  width: 200px;      /* adjust size as needed */
+  height: 200px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.circle-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+.image-quote {
+  text-align: center;
+  margin: 20px;
+  display: inline-block;
+}
