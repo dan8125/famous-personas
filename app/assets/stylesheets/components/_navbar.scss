@@ -34,3 +34,9 @@ body {
   width: 100%;
   z-index: 1030;
 }
+
+.avatar:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+  cursor: pointer;
+}
