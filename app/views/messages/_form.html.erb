@@ -3,7 +3,7 @@
     <%= f.input :content,
       as: :string,
       label: false,
-      placeholder: "Type your message...",
+      placeholder: (@chat.messages.exists? ? "Respond to #{@chat.persona.name}..." : "Start the conversation..."),
       input_html: { class: "form-control chat-input py-3" },
       wrapper_html: { class: 'w-100' }
     %>
