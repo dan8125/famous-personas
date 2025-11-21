@@ -14,7 +14,7 @@
   overflow-y: auto;    /* scroll independently if long */
 }
 
-.main-chat-container {
+.main-container {
   flex: 1;             /* TAKE ALL REMAINING SPACE */
   padding: 20px;
   overflow-y: auto;
@@ -60,7 +60,7 @@ textarea {
   border: none;
 }
 
-.back-button {
+.site-button {
   background-color: black;
   border-radius: 4px;
 }

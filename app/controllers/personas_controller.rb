@@ -1,15 +1,21 @@
 class PersonasController < ApplicationController
 
   def index
-    @personas = [
-      Persona.find_by(name: "Queen Elizabeth"),
-      Persona.find_by(name: "SpongeBob"),
-      Persona.find_by(name: "Carl Jung")
-    ]
+    @personas = Persona.all
+    @persona = Persona.new
   end
 
   def show
     @persona = Persona.find(params[:id])
+  end
+
+  def create
+    @persona = Persona.new(persona_params)
+    if @persona.save
+      render json: { redirect_url: persona_path(@persona) }
+    else
+      render json: { error: @persona.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   private

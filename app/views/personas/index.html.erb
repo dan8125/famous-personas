@@ -1,26 +1,27 @@
 <div>
   <div class="container">
     <br>
-    <h2>Choose who you want to chat with!</h2>
-
+    <div class="d-flex justify-content-between">
+      <h2 class="fw-bold mt-4" >Choose who you want to chat with!</h2>
+      <button class="btn btn-dark btn-lg mt-3 site-button fw-medium" data-controller="new-persona-alert" data-action="click->new-persona-alert#openPrompt">+ Add a New Persona!</button>
+    </div>
   </div>
 </div>
-
 <div class="container mt-5">
   <div class="row">
     <% @personas.each do |persona| %>
-      <div class="col-md-4 mb-3">
-          <div class="card" style="height: 350px;">
-            <% if persona.photo.attached? %>
-              <%= cl_image_tag persona.photo.key, alt: persona.name, style: "max-height: 200px; width: 100%; object-fit: contain;" %>
-            <% else %>
-              <%= image_tag 'https://media.istockphoto.com/id/2171382633/vector/user-profile-icon-anonymous-person-symbol-blank-avatar-graphic-vector-illustration.jpg?s=612x612&w=0&k=20&c=ZwOF6NfOR0zhYC44xOX06ryIPAUhDvAajrPsaZ6v1-w=', alt: persona.name %>
-            <% end %>
-            <div class="card-body">
-              <h5 class="card-title"><%= persona.name %></h5>
-              <%= link_to 'Choose', persona_path(persona), class: 'btn btn-primary mt-3' %>
-            </div>
+      <div class="col-md-4">
+        <div class="card" style="height: 350px;">
+          <% if persona.photo.attached? %>
+            <%= cl_image_tag persona.photo.key, alt: persona.name, style: "max-height: 200px; width: 100%; object-fit: contain;" %>
+          <% else %>
+            <%= image_tag 'https://media.istockphoto.com/id/2171382633/vector/user-profile-icon-anonymous-person-symbol-blank-avatar-graphic-vector-illustration.jpg?s=612x612&w=0&k=20&c=ZwOF6NfOR0zhYC44xOX06ryIPAUhDvAajrPsaZ6v1-w=', alt: persona.name %>
+          <% end %>
+          <div class="card-body">
+            <h3 class="card-title fw-semibold"><%= persona.name %></h3>
+            <%= link_to 'Choose', persona_path(persona), class: 'btn btn-dark mt-3 site-button' %>
           </div>
+        </div>
       </div>
     <% end %>
   </div>
